@@ -1,0 +1,17 @@
+<div  layout-fill>
+  <div layout="row" layout-align="center center">
+  <md-button ng-click="main.calculatePrimes()">calculate primes</md-button>
+  <md-input-container>
+    <label>max number</label>
+    <input type="text" ng-model="main.totalNumbers" ng-change="main.setUpTable()" >
+  </md-input-container>
+</div>
+  <md-content>
+    <div layout="vertical" layout-align="center center" ng-repeat="numberrow in main.numbers track by $index" ng-if="$index % 10 == 0">
+      <div class="number-icon" layout="row" layout-align="center center" ng-repeat="number in [$index,$index + 1,$index + 2,$index + 3, $index + 4,$index + 5,$index + 6,$index + 7,$index + 8,$index + 9]" ng-if="main.numbers[number] != null" ng-class="main.numbers[number].numClass">
+        <span >{{main.numbers[number].num}}</span>
+      </div>
+    </div>
+  </md-content>
+
+</div>
