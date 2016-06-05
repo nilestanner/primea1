@@ -17,6 +17,7 @@
     vm.totalNumbers = 100;
 
     vm.setUpTable = function(){
+      vm.totalNumbers = parseInt(vm.totalNumbers);
       vm.numbers = [];
       var total = vm.totalNumbers
       var i = total
@@ -32,6 +33,7 @@
 
     vm.calculatePrimes = function (){
       vm.setUpTable();
+      vm.startTime = new Date();
       var i = 1
       var curPrime;
       vm.numbers[0].numClass='prime';
@@ -45,6 +47,7 @@
         }
         i = findNextPrimeIndex(i);
       }
+      vm.endTime = new Date();
     }
 
     function findNextPrimeIndex(i){
